@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | BioBoston Consulting</title>
+    <meta name="description"
+        content="Join BioBoston Consulting and build a career in Biotech and Life Sciences consulting.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Specific Careers Page Styles */
+        .careers-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+
+        .culture-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .culture-img {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            height: 250px;
+        }
+
+        .culture-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-normal);
+        }
+
+        .culture-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .culture-img:nth-child(2) {
+            transform: translateY(2rem);
+        }
+
+        .jobs-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .job-card {
+            background: var(--color-white);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all var(--transition-fast);
+            border: 1px solid var(--color-border);
+        }
+
+        .job-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+            border-color: var(--color-primary);
+        }
+
+        .job-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-dark);
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 1.5rem;
+            color: var(--color-gray);
+            font-size: 0.95rem;
+        }
+
+        .job-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        @media (max-width: 768px) {
+            .culture-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .job-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+
+            .job-card .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo">
+                BioBoston <span>Consulting</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                ☰
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="insite.html">Insights</a></li>
+                <li><a href="joinus.html" class="active">Careers</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header"
+        style="background: linear-gradient(135deg, var(--color-dark) 0%, rgba(11, 17, 32, 0.9) 100%), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80') center/cover;">
+        <div class="container animate-up">
+            <h1 class="page-title">Join Us</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <span>Careers</span>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding: 6rem 0; background: var(--color-light);">
+        <div class="container animate-up">
+
+            <!-- Culture Section -->
+            <div class="culture-grid">
+                <div class="culture-content">
+                    <h2 class="mb-2 text-primary">OUR CULTURE</h2>
+                    <h3 class="mb-4" style="font-size: 2.5rem;">Careers in Biotech & Life Sciences</h3>
+                    <p class="mb-3 text-gray" style="font-size: 1.1rem;">
+                        At BioBoston Consulting, we believe that the best solutions come from a collaborative,
+                        inclusive, and forward-thinking environment.
+                    </p>
+                    <p class="mb-4 text-gray" style="font-size: 1.1rem;">
+                        Join a team of passionate experts dedicated to helping pharmaceutical, biotechnology, and
+                        medical device companies advance their products faster, eliminate regulatory risks, and operate
+                        with certainty.
+                    </p>
+                    <ul style="list-style: none; padding-left: 0; margin-bottom: 2rem;">
+                        <li class="mb-1"><strong>✓</strong> Innovative Environment</li>
+                        <li class="mb-1"><strong>✓</strong> Continuous Learning & Growth</li>
+                        <li class="mb-1"><strong>✓</strong> Impactful Global Projects</li>
+                    </ul>
+                </div>
+                <div class="culture-images">
+                    <div class="culture-img">
+                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80"
+                            alt="Team meeting">
+                    </div>
+                    <div class="culture-img">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80"
+                            alt="Collaborative workspace">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Open Positions -->
+            <div class="jobs-section" style="margin-top: 8rem;">
+                <div class="text-center mb-8">
+                    <h2 class="text-primary mb-2">OPEN POSITIONS</h2>
+                    <h3 style="font-size: 2.2rem;">Join Our Growing Team</h3>
+                </div>
+
+                <div class="jobs-list">
+
+                    <!-- Job 1 -->
+                    <div class="job-card glass-panel" style="border: none;">
+                        <div class="job-info">
+                            <h3>Senior Regulatory Affairs Consultant</h3>
+                            <div class="job-meta">
+                                <span>📍 Boston, MA (Hybrid)</span>
+                                <span>🕒 Full-time</span>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="btn btn-outline">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="job-card glass-panel" style="border: none;">
+                        <div class="job-info">
+                            <h3>Clinical Trials Specialist</h3>
+                            <div class="job-meta">
+                                <span>📍 Remote</span>
+                                <span>🕒 Full-time</span>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="btn btn-outline">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Job 3 -->
+                    <div class="job-card glass-panel" style="border: none;">
+                        <div class="job-info">
+                            <h3>Quality Systems Auditor</h3>
+                            <div class="job-meta">
+                                <span>📍 Cambridge, MA</span>
+                                <span>🕒 Contract</span>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="btn btn-outline">Apply Now</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="navbar-logo" style="color: white;">BioBoston <span>Consulting</span></h3>
+                    <p style="margin-top: 1rem;">Advancing products faster, eliminating regulatory risks, and operating
+                        with certainty.</p>
+                    <div class="social-links mt-4" style="display: flex; gap: 1rem;">
+                        <a href="https://www.linkedin.com/company/biobostonconsulting/" target="_blank"
+                            style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); color: white; transition: background 0.3s;">
+                            in
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCxkWeuB6NvqnZUAkt-Nw5HQ" target="_blank"
+                            style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); color: white; transition: background 0.3s;">
+                            YT
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="joinus.html">Careers</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Expertise</h4>
+                    <ul class="footer-links">
+                        <li><a href="service.html">PreClinical</a></li>
+                        <li><a href="service.html">Clinical</a></li>
+                        <li><a href="service.html">Commercialization</a></li>
+                        <li><a href="service.html">All Stages</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BioBoston Consulting. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

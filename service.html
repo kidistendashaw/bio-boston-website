@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | BioBoston Consulting</title>
+    <meta name="description"
+        content="Explore BioBoston Consulting services: PreClinical, Clinical, and Commercialization strategies for the life sciences.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Specific Services Page Styles */
+        .services-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .service-card {
+            background: var(--color-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+            border: 1px solid var(--color-border);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .service-card-body {
+            padding: 2.5rem 2rem;
+        }
+
+        .service-card-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary-dark);
+        }
+
+        .service-card-desc {
+            color: var(--color-gray);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo">
+                BioBoston <span>Consulting</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                ☰
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html" class="active">Services</a></li>
+                <li><a href="insite.html">Insights</a></li>
+                <li><a href="joinus.html">Careers</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header"
+        style="background: linear-gradient(135deg, var(--color-dark) 0%, rgba(11, 17, 32, 0.9) 100%), url('https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80') center/cover;">
+        <div class="container animate-up">
+            <h1 class="page-title">Consulting Services</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <span>Our Services</span>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding: 6rem 0; background: var(--color-light);">
+        <div class="container animate-up">
+            <div class="services-intro">
+                <h2 class="mb-4 text-primary">OUR EXPERTISE</h2>
+                <p class="mb-2 text-gray" style="font-size: 1.1rem;">
+                    With sophisticated product development and technical capabilities, combined with deep knowledge of
+                    organizational development competencies required for transformation, we are the single stop resource
+                    to put your needs first.
+                </p>
+            </div>
+
+            <div class="service-cards">
+                <!-- PreClinical -->
+                <div class="service-card animate-up" style="animation-delay: 0.1s;">
+                    <div class="service-card-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80');">
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-card-title">PreClinical</h3>
+                        <p class="service-card-desc">
+                            In the preclinical phase, we provide comprehensive support to evaluate the safety and
+                            efficacy of your drug or device before entering clinical trials. Our services are designed
+                            to ensure that your product is robust and ready for the next stage of development.
+                        </p>
+                        <a href="#contact" class="btn btn-outline" style="width: 100%;">Learn More &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Clinical -->
+                <div class="service-card animate-up" style="animation-delay: 0.2s;">
+                    <div class="service-card-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80');">
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-card-title">Clinical</h3>
+                        <p class="service-card-desc">
+                            The clinical development phase is crucial for validating the safety and efficacy of your
+                            drug or device in human subjects. Our comprehensive approach ensures that your clinical
+                            trials are designed and executed effectively, paving the way for successful market approval.
+                        </p>
+                        <a href="#contact" class="btn btn-outline" style="width: 100%;">Learn More &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Commercialization -->
+                <div class="service-card animate-up" style="animation-delay: 0.3s;">
+                    <div class="service-card-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80');">
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-card-title">Commercialization</h3>
+                        <p class="service-card-desc">
+                            The commercialization phase is where your innovative drug or device transitions from
+                            development to market launch. Our team is dedicated to ensuring a successful entry into the
+                            marketplace, specializing in guiding your pharmaceutical and medical devices.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline" style="width: 100%;">Learn More &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- All Stages -->
+                <div class="service-card animate-up" style="animation-delay: 0.4s;">
+                    <div class="service-card-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80');">
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-card-title">All Stages</h3>
+                        <p class="service-card-desc">
+                            At BioBoston Consulting, we specialize in guiding your innovations through every stage of
+                            development. Our comprehensive services encompass preclinical research, regulatory strategy,
+                            clinical trials, and market entry support.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline" style="width: 100%;">Learn More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="navbar-logo" style="color: white;">BioBoston <span>Consulting</span></h3>
+                    <p style="margin-top: 1rem;">Advancing products faster, eliminating regulatory risks, and operating
+                        with certainty.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="joinus.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Expertise</h4>
+                    <ul class="footer-links">
+                        <li><a href="service.html">PreClinical</a></li>
+                        <li><a href="service.html">Clinical</a></li>
+                        <li><a href="service.html">Commercialization</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BioBoston Consulting. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

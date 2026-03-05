@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights | BioBoston Consulting</title>
+    <meta name="description"
+        content="Expert analysis and insights in Biotech and Life Sciences from BioBoston Consulting.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Specific Insights Page Styles */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            padding: 4rem 0;
+        }
+
+        .blog-card {
+            background: var(--color-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .blog-card-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .category-pill {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .blog-card-body {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--color-dark);
+            font-family: var(--font-heading);
+        }
+
+        .blog-title a {
+            color: var(--color-dark);
+        }
+
+        .blog-title a:hover {
+            color: var(--color-primary);
+        }
+
+        .blog-excerpt {
+            color: var(--color-gray);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            font-weight: 600;
+            color: var(--color-primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more:hover {
+            color: var(--color-primary-dark);
+        }
+
+        .featured-post {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media (max-width: 768px) {
+            .featured-post {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo">
+                BioBoston <span>Consulting</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                ☰
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="insite.html" class="active">Insights</a></li>
+                <li><a href="joinus.html">Careers</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header"
+        style="background: linear-gradient(135deg, var(--color-dark) 0%, rgba(11, 17, 32, 0.9) 100%), url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80') center/cover;">
+        <div class="container animate-up">
+            <h1 class="page-title">Insights</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <span>Expert Analysis</span>
+            </div>
+            <p
+                style="margin-top: 1.5rem; font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 600px; margin-left: auto; margin-right: auto;">
+                Expert analysis and thought leadership in Biotech and Life Sciences.
+            </p>
+        </div>
+    </header>
+
+    <main style="background: var(--color-light);">
+        <div class="container animate-up">
+            <div class="blog-grid">
+
+                <!-- Featured Post -->
+                <article class="blog-card featured-post">
+                    <div class="blog-card-img"
+                        style="height: 100%; min-height: 300px; background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80');">
+                        <span class="category-pill">Regulatory</span>
+                    </div>
+                    <div class="blog-card-body" style="justify-content: center; padding: 3rem;">
+                        <div class="blog-meta">
+                            <span>Oct 15, 2026</span>
+                            <span>&bull;</span>
+                            <span>8 min read</span>
+                        </div>
+                        <h2 class="blog-title" style="font-size: 2rem;"><a href="#">Navigating the FDA's New Digital
+                                Health Guidelines</a></h2>
+                        <p class="blog-excerpt" style="font-size: 1.1rem;">
+                            With the rapid advancement in software as a medical device (SaMD), regulatory bodies are
+                            continuously updating their frameworks. Discover what the newest FDA guidelines mean for
+                            your product development lifecycle.
+                        </p>
+                        <div>
+                            <a href="#" class="read-more">Read Full Article &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="blog-card">
+                    <div class="blog-card-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80');">
+                        <span class="category-pill">Clinical Trials</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta">
+                            <span>Oct 02, 2026</span>
+                        </div>
+                        <h3 class="blog-title"><a href="#">Optimizing Patient Recruitment in Decentralized Trials</a>
+                        </h3>
+                        <p class="blog-excerpt">
+                            Decentralized clinical trials are becoming the norm. Learn how to optimize your patient
+                            recruitment strategies using modern digital tools.
+                        </p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="blog-card">
+                    <div class="blog-card-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80');">
+                        <span class="category-pill">Quality Systems</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta">
+                            <span>Sep 18, 2026</span>
+                        </div>
+                        <h3 class="blog-title"><a href="#">Building a Scalable QMS for Biotech Startups</a></h3>
+                        <p class="blog-excerpt">
+                            A robust Quality Management System (QMS) is critical. Find out how early-stage biotech
+                            companies can implement scalable QMS infrastructure.
+                        </p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article class="blog-card">
+                    <div class="blog-card-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80');">
+                        <span class="category-pill">Market Access</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta">
+                            <span>Aug 25, 2026</span>
+                        </div>
+                        <h3 class="blog-title"><a href="#">Commercialization Strategies for Orphan Drugs</a></h3>
+                        <p class="blog-excerpt">
+                            Bringing an orphan drug to market presents unique challenges. Explore strategies for
+                            successful pricing, reimbursement, and market access.
+                        </p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="navbar-logo" style="color: white;">BioBoston <span>Consulting</span></h3>
+                    <p style="margin-top: 1rem;">Advancing products faster, eliminating regulatory risks, and operating
+                        with certainty.</p>
+                    <div class="social-links mt-4" style="display: flex; gap: 1rem;">
+                        <a href="https://www.linkedin.com/company/biobostonconsulting/" target="_blank"
+                            style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); color: white; transition: background 0.3s;">
+                            in
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCxkWeuB6NvqnZUAkt-Nw5HQ" target="_blank"
+                            style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); color: white; transition: background 0.3s;">
+                            YT
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="joinus.html">Careers</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Expertise</h4>
+                    <ul class="footer-links">
+                        <li><a href="service.html">PreClinical</a></li>
+                        <li><a href="service.html">Clinical</a></li>
+                        <li><a href="service.html">Commercialization</a></li>
+                        <li><a href="service.html">All Stages</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BioBoston Consulting. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

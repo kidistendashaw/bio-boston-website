@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioBoston Consulting: Leading Life Sciences and Biotechnology Strategy Experts</title>
+    <meta name="description"
+        content="BioBoston Consulting is a trusted leader among Life Science consulting firms in Boston. We provide consulting services from preclinical to commercial.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Homepage Specific Styles */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 800px;
+            background: linear-gradient(135deg, rgba(11, 17, 32, 0.8) 0%, rgba(11, 17, 32, 0.4) 100%), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            color: var(--color-white);
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            color: var(--color-white);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        /* Stages Section */
+        .stages-section {
+            padding: 8rem 0;
+            background: var(--color-light);
+        }
+
+        .stages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stage-card {
+            background: var(--color-white);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+            border: 1px solid var(--color-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stage-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--color-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-normal);
+        }
+
+        .stage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stage-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 6rem 0;
+            background: var(--color-white);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .accordion-header {
+            width: 100%;
+            text-align: left;
+            padding: 1.5rem 0;
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-dark);
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-header::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            transition: transform var(--transition-fast);
+        }
+
+        .accordion-header.active::after {
+            transform: rotate(45deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .accordion-content-inner {
+            padding-bottom: 1.5rem;
+            color: var(--color-gray);
+            line-height: 1.8;
+        }
+
+        /* Insights Preview Section */
+        .insights-preview {
+            padding: 8rem 0;
+            background: var(--color-light);
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .insight-card {
+            background: var(--color-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+        }
+
+        .insight-card-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .insight-card-body {
+            padding: 2rem;
+        }
+
+        .insight-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .insight-card h3 a {
+            color: var(--color-dark);
+        }
+
+        .insight-card h3 a:hover {
+            color: var(--color-primary);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .final-cta h2 {
+            color: var(--color-white);
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta p {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo">
+                BioBoston <span>Consulting</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="insite.html">Insights</a></li>
+                <li><a href="joinus.html">Careers</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content animate-up">
+                <div class="mb-2 text-primary" style="font-weight: 600; letter-spacing: 2px;">350+ Senior Experts</div>
+                <h1>We Are Committed to Helping You Achieve Your Goals</h1>
+                <p>Combining deep knowledge of organizational development competencies with sophisticated product
+                    development and technical capabilities.</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn btn-primary">Submit Your Request</a>
+                    <a href="service.html" class="btn btn-outline" style="border-color: white; color: white;">Explore
+                        Our Services</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stages Selection -->
+    <section class="stages-section">
+        <div class="container">
+            <div class="text-center animate-up">
+                <h2 style="font-size: 2.5rem;" class="mb-2">Which stage of process are you currently in?</h2>
+                <p class="text-gray mx-auto" style="max-width: 600px;">Whatever your stage, Preclinical, Clinical, or
+                    Commercial, we've got every service you need in Pharma, Biotech, and MedTech.</p>
+            </div>
+
+            <div class="stages-grid animate-up" style="animation-delay: 0.2s;">
+                <div class="stage-card">
+                    <h3 class="mb-3 text-primary" style="font-size: 1.5rem;">01</h3>
+                    <h4 class="mb-3">PreClinical</h4>
+                    <p class="text-gray mb-4">Evaluate the safety and efficacy of your drug or device before entering
+                        trials.</p>
+                    <a href="service.html" class="btn btn-outline" style="width: 100%;">Learn More</a>
+                </div>
+                <div class="stage-card">
+                    <h3 class="mb-3 text-primary" style="font-size: 1.5rem;">02</h3>
+                    <h4 class="mb-3">Clinical</h4>
+                    <p class="text-gray mb-4">Validating the safety and efficacy in human subjects for market approval.
+                    </p>
+                    <a href="service.html" class="btn btn-outline" style="width: 100%;">Learn More</a>
+                </div>
+                <div class="stage-card">
+                    <h3 class="mb-3 text-primary" style="font-size: 1.5rem;">03</h3>
+                    <h4 class="mb-3">Commercialization</h4>
+                    <p class="text-gray mb-4">Transitioning your innovative drug or device from development to market
+                        launch.</p>
+                    <a href="service.html" class="btn btn-outline" style="width: 100%;">Learn More</a>
+                </div>
+                <div class="stage-card">
+                    <h3 class="mb-3 text-primary" style="font-size: 1.5rem;">04</h3>
+                    <h4 class="mb-3">All Stages</h4>
+                    <p class="text-gray mb-4">Guiding your innovations through every single stage of development.</p>
+                    <a href="service.html" class="btn btn-outline" style="width: 100%;">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-grid">
+                <div class="animate-up">
+                    <h2 class="text-primary mb-2">COMMON QUESTIONS</h2>
+                    <h3 style="font-size: 2.5rem;" class="mb-4">Frequently Asked Questions</h3>
+                    <p class="text-gray mb-4">Can't find the answer you're looking for? Reach out to our customer
+                        support team.</p>
+                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                </div>
+
+                <div class="accordion-container animate-up" style="animation-delay: 0.2s;">
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">What makes BioBoston Consulting different?</button>
+                        <div class="accordion-content">
+                            <div class="accordion-content-inner">
+                                BioBoston Consulting offers a one-stop solution for life sciences companies, guiding
+                                innovations from preclinical research to commercialization. We combine 350+ global
+                                industry experts with a lean structure, delivering cost-effective, tailored support.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">Which industries does BioBoston serve?</button>
+                        <div class="accordion-content">
+                            <div class="accordion-content-inner">
+                                We specialize in Pharmaceuticals, Biotechnology, and Medical Devices.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">Is BioBoston Consulting cost-effective?</button>
+                        <div class="accordion-content">
+                            <div class="accordion-content-inner">
+                                Yes. Our lean organizational structure allows us to deliver high-quality services at a
+                                lower cost than other consulting firms, without compromising expertise or results.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Preview -->
+    <section class="insights-preview">
+        <div class="container text-center animate-up">
+            <h2 class="text-primary mb-2">INSIGHTS</h2>
+            <h3 style="font-size: 2.5rem;">Make smarter moves. Start here.</h3>
+
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-card-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80');">
+                    </div>
+                    <div class="insight-card-body text-left">
+                        <h3><a href="insite.html">Designing Risk-Based Internal and Supplier Audit Programs</a></h3>
+                        <a href="insite.html" style="font-weight: 600;">Read Article &rarr;</a>
+                    </div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-card-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80');">
+                    </div>
+                    <div class="insight-card-body text-left">
+                        <h3><a href="insite.html">Ensuring Inspection-Ready Documentation for BLA Submission</a></h3>
+                        <a href="insite.html" style="font-weight: 600;">Read Article &rarr;</a>
+                    </div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-card-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80');">
+                    </div>
+                    <div class="insight-card-body text-left">
+                        <h3><a href="insite.html">Enabling Predictable BLA Outcomes Through Risk-Based Strategy</a></h3>
+                        <a href="insite.html" style="font-weight: 600;">Read Article &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <a href="insite.html" class="btn btn-outline">View All Insights</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container animate-up">
+            <h2>Tell Us What You Need We’ll Take Care of the Rest</h2>
+            <p>A member of our team will reach out to you in the next 24 hours.</p>
+            <a href="contact.html" class="btn btn-primary"
+                style="background: var(--color-white); color: var(--color-primary);">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="navbar-logo" style="color: white;">BioBoston <span>Consulting</span></h3>
+                    <p style="margin-top: 1rem;">Advancing products faster, eliminating regulatory risks, and operating
+                        with certainty.</p>
+                    <div class="social-links mt-4" style="display: flex; gap: 1rem;">
+                        <a href="https://www.linkedin.com/company/biobostonconsulting/" target="_blank"
+                            style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); color: white; transition: background 0.3s;">
+                            in
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCxkWeuB6NvqnZUAkt-Nw5HQ" target="_blank"
+                            style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); color: white; transition: background 0.3s;">
+                            YT
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="joinus.html">Careers</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Expertise</h4>
+                    <ul class="footer-links">
+                        <li><a href="service.html">PreClinical</a></li>
+                        <li><a href="service.html">Clinical</a></li>
+                        <li><a href="service.html">Commercialization</a></li>
+                        <li><a href="service.html">All Stages</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BioBoston Consulting. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // FAQ Accordion
+        const accordions = document.querySelectorAll('.accordion-header');
+
+        accordions.forEach(acc => {
+            acc.addEventListener('click', function () {
+                // Toggle Active Class
+                this.classList.toggle('active');
+
+                // Toggle Content Max Height
+                const content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

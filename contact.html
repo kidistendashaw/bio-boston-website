@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | BioBoston Consulting</title>
+    <meta name="description"
+        content="Contact BioBoston Consulting for expert Life Sciences, Biotechnology, and Medical Device strategy.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Contact Page Specific */
+        .contact-section {
+            padding: 6rem 0;
+            background: var(--color-light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            padding: 3rem;
+            background: var(--color-white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-form {
+            padding: 3rem;
+            background: var(--color-white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--color-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color var(--transition-fast);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .hq-details h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--color-dark);
+            margin-bottom: 1rem;
+        }
+
+        .hq-details p {
+            color: var(--color-gray);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo">
+                BioBoston <span>Consulting</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="insite.html">Insights</a></li>
+                <li><a href="joinus.html">Careers</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header"
+        style="background: linear-gradient(135deg, var(--color-dark) 0%, rgba(11, 17, 32, 0.9) 100%), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80') center/cover;">
+        <div class="container animate-up">
+            <h1 class="page-title">Contact Us</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <span>Contact</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="contact-section">
+        <div class="container animate-up">
+            <div class="text-center mb-8">
+                <h2 class="text-primary mb-2">GET IN TOUCH</h2>
+                <h3 style="font-size: 2.5rem;">Tell Us What You Need We’ll Take Care of the Rest</h3>
+            </div>
+
+            <div class="contact-grid">
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="hq-details mb-4">
+                        <h3 class="mb-2">Headquarters</h3>
+                        <p>75 State Street, Ste. 100</p>
+                        <p>Boston, MA 02109</p>
+                    </div>
+
+                    <div class="hq-details mt-8">
+                        <h3 class="mb-2">Connect With Us</h3>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <a href="https://www.linkedin.com/company/biobostonconsulting/" target="_blank"
+                                class="btn btn-outline" style="padding: 0.5rem 1rem;">LinkedIn</a>
+                            <a href="https://www.youtube.com/channel/UCxkWeuB6NvqnZUAkt-Nw5HQ" target="_blank"
+                                class="btn btn-outline" style="padding: 0.5rem 1rem;">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <form onsubmit="event.preventDefault(); alert('Message Sent!');">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" class="form-control" required placeholder="John Doe">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" required placeholder="john@company.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" class="form-control" placeholder="Your Company Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">How can we help you? *</label>
+                            <textarea id="message" class="form-control" required
+                                placeholder="Tell us about your project..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="navbar-logo" style="color: white;">BioBoston <span>Consulting</span></h3>
+                    <p style="margin-top: 1rem;">Advancing products faster, eliminating regulatory risks, and operating
+                        with certainty.</p>
+                    <div class="social-links mt-4" style="display: flex; gap: 1rem;">
+                        <a href="https://www.linkedin.com/company/biobostonconsulting/" target="_blank"
+                            style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); color: white; transition: background 0.3s;">
+                            in
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCxkWeuB6NvqnZUAkt-Nw5HQ" target="_blank"
+                            style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); color: white; transition: background 0.3s;">
+                            YT
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="joinus.html">Careers</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Expertise</h4>
+                    <ul class="footer-links">
+                        <li><a href="service.html">PreClinical</a></li>
+                        <li><a href="service.html">Clinical</a></li>
+                        <li><a href="service.html">Commercialization</a></li>
+                        <li><a href="service.html">All Stages</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BioBoston Consulting. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
